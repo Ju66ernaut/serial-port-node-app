@@ -39,7 +39,7 @@ if (env === 'dev') {
         socket.on('getValue', () => {
             let num = Math.floor(Math.random() * 51)
             console.log(`emitting ${num}`)
-            socket.emit('newWeight', {weight: num})
+            io.emit('newWeight', {weight: num})
         })
     })   
 }
