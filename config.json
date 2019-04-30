@@ -1,0 +1,9 @@
+{
+    "path": "COM4",
+    "baudRate": 9600, 
+    "databits": 8, 
+    "parity": "none", 
+    "stopBits": 1, 
+    "flowControl": false,
+    "autoOpen": false
+}

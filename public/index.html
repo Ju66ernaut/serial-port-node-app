@@ -1,0 +1,37 @@
+<html>
+        <div>
+                <input type="text" id="txtBox" />
+                <button id="button">Get Value</button>
+                <span id="raw"></span>  
+        </div>
+</html>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+let socket = io()
+document.getElementById('button').addEventListener('click', () => {
+        socket.emit('getValue')
+})
+socket.on('newWeight', data => {
+        console.log(data)
+        document.getElementById('txtBox').value = data.weight
+})
+
+// document.getElementById('txtBox').addEventListener('click', () => {
+//         fetch('http://localhost:4113/test')
+//                 .then(response => {
+//                         console.log('success')
+//                         response.json().then(json => {
+//                                 document.getElementById('raw').innerText = `Raw: ${json.weight}`
+//                                 if (json.weight != 0){
+//                                         let numVal = Number(json.weight.split(' ')[0])
+//                                         document.getElementById('txtBox').value = numVal
+//                                 }
+//                         })
+//                 })
+//                 .catch(error => {
+//                         console.log('error')
+//                         console.log(error)
+//                 })
+// })
+</script>
